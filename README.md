@@ -32,8 +32,8 @@ git push
 
 * Als nächstes müsst ihr das test repository auf github erstellen
 
-![image](https://github.com/techlabsms/ms-st-20-00-schwimmbadkalender/src/miscellaneous/screenshots/new-repository.PNG) 
-![image](https://github.com/techlabsms/ms-st-20-00-schwimmbadkalender/src/miscellaneous/screenshots/create-repository.PNG) 
+![image](https://github.com/techlabsms/ms-st-20-00-schwimmbadkalender/blob/master/src/miscellaneous/screenshots/new-repository.PNG) 
+![image](https://github.com/techlabsms/ms-st-20-00-schwimmbadkalender/blob/master/src/miscellaneous/screenshots/create-repository.PNG) 
 
 * Folgenden Befehl (auf euer github angepasste repository url)  müsst ihr zum Verbinden des lokalen git repositories mit dem online github repository noch eingeben:
 ```
@@ -41,7 +41,7 @@ git remote add origin git@github.com:ThomasDroege/test.git
 ```
 (siehe screenshot)
 
-![image](https://github.com/techlabsms/ms-st-20-00-schwimmbadkalender/src/miscellaneous/screenshots/created-repository.PNG) 
+![image](https://github.com/techlabsms/ms-st-20-00-schwimmbadkalender/blob/master/src/miscellaneous/screenshots/created-repository.png) 
 
 * Pushen des lokalen git reps zum online github rep:
 ```
