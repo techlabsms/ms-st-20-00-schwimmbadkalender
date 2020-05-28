@@ -4,7 +4,7 @@
 
 Für Mac können die git Befehle genau so (wie folgend für windows beschrieben) ausgeführt werden. Entweder über das terminal: Hierfür müssen wir zu dem erstellten test-Ordner navigieren können (keine Ahnung ...) oder (je nach Entwicklerumgebung: hier visual studio code) in dem integriertem Terminal
 
-![image](https://github.com/techlabsms/ms-st-20-00-schwimmbadkalender/src/miscellaneous/screenshots/terminal.PNG) 
+![image](https://github.com/techlabsms/ms-st-20-00-schwimmbadkalender/blob/master/src/miscellaneous/screenshots/terminal.PNG) 
 
 ## Git/Github aus der Windows Console/Eingabeforderung:
 
