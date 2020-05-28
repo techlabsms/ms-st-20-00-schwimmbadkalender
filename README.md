@@ -1,5 +1,11 @@
 # schwimmbad-application
 
+## Git/Github für Mac:
+
+Für Mac können die git Befehle genau so (wie folgend für windows beschrieben) ausgeführt werden. Entweder über das terminal: Hierfür müssen wir zu dem erstellten test-Ordner navigieren können (keine Ahnung ...) oder (je nach Entwicklerumgebung: hier visual studio code) in dem integriertem Terminal
+
+![image](https://github.com/techlabsms/ms-st-20-00-schwimmbadkalender/src/miscellaneous/screenshots/terminal.PNG) 
+
 ## Git/Github aus der Windows Console/Eingabeforderung:
 
 * Erstellen des Ordners in dem das git repository initialisiert werden soll (hier als Beispiel **C:/test**)
@@ -14,7 +20,7 @@ Daraufhin wurde ein versteckter .git-Ordner erstellt: **C:/test/.git**. Hier wer
 ```
 git status
 ```
-eingebt, so seht ihr die Änderungen (in rot), welche seit dem letzeten Commit/Init des git repositories vorgenommen wurden
+eingebt, so seht ihr die Änderungen (in rot), welche seit dem letzten Commit/Init des git repositories vorgenommen wurden
 * Mit Eingabe von
 ```
 git add .
