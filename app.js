@@ -1,24 +1,54 @@
 // load our app server using express
+const  path = require('path')
 const express = require('express')
-const app = express()
 const morgan = require('morgan')
+const mysql = require('mysql')
+const hbs = require('hbs')
+const app = express()
+
+const port = 3000
 
 app.use(morgan('combined'))
 
-app.get("/", (req, res) => {
-    console.log("Responding to root route")
-    res.send("Hello from ROOOTT")
+// Define paths for Express config 
+const viewsPath = path.join(__dirname, '/templates/views')
+
+// Setup handlebars engine and views location
+app.set('view engine', 'hbs')
+app.set('views', viewsPath)
+
+
+app.get('', (req, res) => {
+    res.render('index', {
+        title: 'Weather',
+        name: 'Thomas D.'
+    })
 })
 
-app.get("/users", (req, res) => {
-    const user1 = {firstName: "Thomas", lastName: "Dröge"}
-    const user2 = {firstName: "Lina", lastName: "Fromme"}
-    const user3 = {firstName: "Charlotte", lastName: "Ausborn"}
-    
-    res.json([user1, user2, user3])
+
+app.get('/user/:id', (req, res) => {
+    console.log("Fetching user with id: " + req.params.id)
+
+    const connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'password',
+        database: 'usersdb',      
+    })
+
+    const userId = req.params.id
+    const queryString = "SELECT * FROM users WHERE id = ?"
+    connection.query(queryString, [userId], (err, rows, fields) => {
+        if(err){
+            console.log("Failed to query for users: "+ err) 
+        } else{
+            console.log("I think we fetched users successfully")
+            res.json(rows)
+        }      
+    })
 })
 
 // localhost:3000 on browser
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server is up and listening on 3000...")
 })
