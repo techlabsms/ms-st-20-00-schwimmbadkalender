@@ -48,6 +48,10 @@ app.get('/user/:id', (req, res) => {
     })
 })
 
+//automatically parse incoming json to an object, for e.g. access it in request-handler
+app.use(express.json())
+app.use([userRouter, taskRouter])
+
 // localhost:3000 on browser
 app.listen(port, () => {
     console.log("Server is up and listening on 3000...")
