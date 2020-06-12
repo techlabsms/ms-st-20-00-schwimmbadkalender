@@ -4,6 +4,10 @@ const express = require('express')
 const morgan = require('morgan')
 const mysql = require('mysql')
 const hbs = require('hbs')
+
+const userRouter = require('./src/routers/userRouter')
+
+
 const app = express()
 
 const port = 3000
@@ -50,7 +54,7 @@ app.get('/user/:id', (req, res) => {
 
 //automatically parse incoming json to an object, for e.g. access it in request-handler
 app.use(express.json())
-app.use([userRouter, taskRouter])
+app.use(userRouter)
 
 // localhost:3000 on browser
 app.listen(port, () => {

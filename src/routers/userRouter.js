@@ -1,9 +1,9 @@
 const express = require('express')
 const router = new express.Router()
 
-router.post('/users', async (req, res) => {
+router.post('/users',  (req, res) => {
     
-        res.send('User Site')
+        res.send({'test': 'test'})
     
 })
 
