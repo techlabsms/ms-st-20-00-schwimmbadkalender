@@ -1,9 +1,12 @@
 const express = require('express')
 const router = new express.Router()
 
-router.post('/users',  (req, res) => {
+router.get('/users', async (req, res) => {
     
-        res.send({'test': 'test'})
+        res.send({
+                'firstname':'thomas',
+                'lastname' : 'dröge'
+                })
     
 })
 
