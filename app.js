@@ -10,7 +10,7 @@ const userRouter = require('./src/routers/userRouter')
 
 const app = express()
 
-const port = 3000
+const port = process.env.PORT || 3000 
 
 app.use(morgan('combined'))
 
@@ -58,5 +58,5 @@ app.use([userRouter])
 
 // localhost:3000 on browser
 app.listen(port, () => {
-    console.log("Server is up and listening on 3000...")
+    console.log("Server is up and listening on port " + port)
 })
