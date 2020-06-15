@@ -4,7 +4,7 @@ const express = require('express')
 const morgan = require('morgan')
 const hbs = require('hbs')
 
-const userRouter = require('./src/routers/userRouter')
+const userRouter = require('./src/routers/users')
 
 // Database
 const db = require('./src/database/mysql-db')
@@ -15,8 +15,6 @@ db.authenticate()
     .catch(err => console.log('Error' + err))
 
 const app = express()
-
-const port = process.env.PORT || 3000 
 
 app.use(morgan('combined'))
 
@@ -32,7 +30,10 @@ app.get('', (req, res) => {
     res.render('index')
 })
 
-// localhost:3000 on browser
-app.listen(port, () => {
-    console.log("Server is up and listening on port " + port)
-})
+
+// User routes
+app.use('/users', require('./src/routers/users'))
+
+const port = process.env.PORT || 3000 
+
+app.listen(port, console.log("Server is up and listening on port " + port))
