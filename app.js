@@ -7,6 +7,15 @@ const hbs = require('hbs')
 
 const userRouter = require('./src/routers/userRouter')
 
+// Database
+const db = require('./src/database/mysql-db')
+
+
+// Test DB
+db.authenticate()
+    .then(() => console.log('Database connected...'))
+    .catch(err => console.log('Error' + err))
+
 
 const app = express()
 
