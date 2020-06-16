@@ -3,6 +3,7 @@ const  path = require('path')
 const express = require('express')
 const morgan = require('morgan')
 const hbs = require('hbs')
+const bodyParser = require('body-parser')
 
 const userRouter = require('./src/routers/users')
 
