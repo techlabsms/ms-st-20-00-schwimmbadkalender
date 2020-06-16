@@ -25,6 +25,9 @@ const viewsPath = path.join(__dirname, '/templates/views')
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 
+// Set static folder
+app.use(express.static(path.join(__dirname, './src/public')))
+
 
 app.get('', (req, res) => {
     res.render('index')

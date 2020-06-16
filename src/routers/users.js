@@ -15,9 +15,9 @@ User.findAll()
 // Add a user
 router.get('/add', (req, res) => {
     const data = {
-        id: 2,
-        fname: 'Lina',
-        lname: 'Fromme',
+        id: 4,
+        fname: 'Carolin',
+        lname: 'Krohn',
         createdAt: '2020-06-15 12:00:00',
         updatedAt: '2020-06-15 12:00:01'
     }
