@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Users</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Vorname</th>
+                <th>Nachname</th>
+            </tr>
+            {{#each user}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{fname}}</td>
+                <td>{{lname}}</td>
+            </tr>  
+            {{else}}
+                <p>No User avaible</p>   
+            {{/each}}
+        </table>
+    </body>
+</html>

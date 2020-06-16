@@ -8,7 +8,9 @@ router.get('/', (req, res) =>
 User.findAll()
     .then(user => {
         console.log(user);
-        res.sendStatus(200);
+        res.render('showUsers', {
+            user
+        })
     })
     .catch(err => console.log(err)))
 
