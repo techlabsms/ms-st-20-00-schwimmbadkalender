@@ -15,32 +15,44 @@ User.findAll()
     .catch(err => console.log(err)))
 
 // Add a user
-router.get('/add', (req, res) => {
-    const data = {
-        id: 4,
-        fname: 'Carolin',
-        lname: 'Krohn',
-        createdAt: '2020-06-15 12:00:00',
-        updatedAt: '2020-06-15 12:00:01'
+router.post('/add', (req, res) => {
+    
+    let  {fname, lname} = req.body;
+    let errors = [];
+
+    // Validate Fields
+   
+    if(!fname){
+        errors.push({text: 'Please add a fname'})
+    }
+    if(!lname){
+        errors.push({text: 'Please add a lname'})
     }
 
-    let  {id, fname, lname, createdAt, updatedAt } = data;
 
-    // Insert into table
-    User.create({
-        id,
-        fname,
-        lname,
-        createdAt,
-        updatedAt
-    })
-    .then(user => res.redirect('/users'))
-    .catch(err => console.log(err))
+    //Check for errors
+    if(errors.length > 0){
+        res.render('index',{
+            errors,
+            fname,
+            lname
+        })
+        console.log(errors)
+        
+       
+    } else {
+         // Insert into table
+        User.create({
+            fname,
+            lname
+        })
+        .then(user => res.redirect('/users'))
+        .catch(err => console.log(err))
+    }
+
+   
 
 })
-
-
-
 
 
 module.exports = router
