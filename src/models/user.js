@@ -7,6 +7,21 @@ const User = db.define('user', {
     },
     lname: {
         type: Sequelize.STRING
+    },
+    street: {
+        type: Sequelize.STRING
+    },
+    streetNumber: {
+        type: Sequelize.STRING
+    },
+    plz: {
+        type: Sequelize.STRING
+    },
+    city: {
+        type: Sequelize.STRING
+    },
+    numberOfPersons: {
+        type: Sequelize.STRING
     }
 })
 

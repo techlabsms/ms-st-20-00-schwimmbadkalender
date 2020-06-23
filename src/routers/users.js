@@ -17,17 +17,33 @@ User.findAll()
 // Add a user
 router.post('/add', (req, res) => {
     
-    let  {fname, lname} = req.body;
+    let  {fname, lname, street, streetNumber, plz, city, email, numberOfPersons} = req.body;
     let errors = [];
 
     // Validate Fields
    
     if(!fname){
-        errors.push({text: 'Please add a fname'})
+        errors.push({text: 'Bitte geben Sie einen Vornamen an'})
     }
     if(!lname){
-        errors.push({text: 'Please add a lname'})
+        errors.push({text: 'Bitte geben Sie einen Nachnamen an'})
     }
+    if(!street){
+        errors.push({text: 'Bitte geben Sie eine Straße an'})
+    }
+    if(!streetNumber){
+        errors.push({text: 'Bitte geben Sie eine Straßennummer an'})
+    }
+    if(!plz){
+        errors.push({text: 'Bitte geben Sie eine Postleitzahl an'})
+    }
+    if(!city){
+        errors.push({text: 'Bitte geben Sie eine Stadt an'})
+    }
+    if(!email){
+        errors.push({text: 'Bitte geben Sie eine Emailadresse an'})
+    }
+    
 
 
     //Check for errors
@@ -35,8 +51,14 @@ router.post('/add', (req, res) => {
         res.render('index',{
             errors,
             fname,
-            lname
+            lname,
+            street,
+            streetNumber,
+            plz,
+            city,
+            email
         })
+    
         console.log(errors)
         
        
@@ -44,7 +66,13 @@ router.post('/add', (req, res) => {
          // Insert into table
         User.create({
             fname,
-            lname
+            lname,
+            street,
+            streetNumber,
+            plz,
+            city,
+            email,
+            numberOfPersons
         })
         .then(user => res.redirect('/users'))
         .catch(err => console.log(err))

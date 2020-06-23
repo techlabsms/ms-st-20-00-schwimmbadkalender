@@ -9,12 +9,24 @@
                 <th>ID</th>
                 <th>Vorname</th>
                 <th>Nachname</th>
+                <th>Straße</th>
+                <th>Nr.</th>
+                <th>PLZ</th>
+                <th>Stadt</th>
+                <th>Email</th>
+                <th>Anzahl zusätzlicher Personen</th>
             </tr>
             {{#each user}}
             <tr>
                 <td>{{id}}</td>
                 <td>{{fname}}</td>
                 <td>{{lname}}</td>
+                <td>{{street}}</td>
+                <td>{{streetNumber}}</td>
+                <td>{{plz}}</td>
+                <td>{{city}}</td>
+                <td>{{email}}</td>
+                <td>{{numberOfPersons}}</td>
             </tr>  
             {{else}}
                 <p>No User avaible</p>   
