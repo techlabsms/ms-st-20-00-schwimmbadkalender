@@ -20,6 +20,13 @@ const User = db.define('user', {
     city: {
         type: Sequelize.STRING
     },
+    email: {
+        type: Sequelize.STRING
+    },
+    confirmed: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+    },
     numberOfPersons: {
         type: Sequelize.STRING
     }
