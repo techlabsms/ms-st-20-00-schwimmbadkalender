@@ -10,6 +10,7 @@ const userRouter = require('./src/routers/users')
 // Database
 const db = require('./src/database/mysql-db')
 
+
 // Test DB
 db.authenticate()
     .then(() => console.log('Database connected...'))

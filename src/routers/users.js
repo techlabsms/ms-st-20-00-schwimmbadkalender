@@ -5,9 +5,11 @@ const User = require('../models/user')
 
 // Get user list
 router.get('/', (req, res) => 
+
 User.findAll()
     .then(user => {
-        console.log(user);
+        //console.log(user);
+        console.log(process.env);
         res.render('showUsers', {
             user
         })
