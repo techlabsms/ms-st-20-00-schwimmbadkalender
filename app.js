@@ -26,8 +26,12 @@ const viewsPath = path.join(__dirname, '/templates/views')
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 
-// Body Parser
+// Body Parser Middleware
+//parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false}))
+
+// parse apllication/json
+app.use(bodyParser.json())
 
 // Set static folder
 app.use(express.static(path.join(__dirname, './src/public')))
