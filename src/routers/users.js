@@ -8,8 +8,7 @@ router.get('/', (req, res) =>
 
 User.findAll()
     .then(user => {
-        //console.log(user);
-        console.log(process.env);
+        console.log(user);
         res.render('showUsers', {
             user
         })
