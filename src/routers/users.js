@@ -2,18 +2,46 @@ const express = require('express')
 const router = new express.Router()
 const db = require('../database/mysql-db')
 const User = require('../models/user')
+//const { Sequelize } = require('sequelize/types')
+const Sequelize = require('sequelize')
+//const {Op, Sequelize} = Sequelize.Op;
+const { Op } = require ("sequelize")
+const moment = require('moment')
+var numberOfPersonsTotal = 0;
 
 // Get user list
 router.get('/', (req, res) => 
 
 User.findAll()
     .then(user => {
-        console.log(user);
+        console.log(user);  
         res.render('showUsers', {
             user
         })
     })
     .catch(err => console.log(err)))
+
+// Get users which are in the swimming pool
+router.get('/shownumberofpersons',  (req, res) => 
+   User.findAll({
+       where: {
+           updatedAt: {
+            [Op.gte]: moment().subtract(10, 'minutes').toDate() }
+        }
+     })
+    .then(user => {
+        for(i = 0; i <user.length; i++){
+            numberOfPersonsTotal += parseInt(user[i].numberOfPersons) + 1;
+        }
+        
+        console.log(numberOfPersonsTotal);
+        
+        res.send(JSON.stringify(numberOfPersonsTotal))
+        
+})
+.catch(err => console.log(err)))
+
+
 
 // Add a user
 router.post('/add', (req, res) => {

@@ -29,6 +29,9 @@ const User = db.define('user', {
     },
     numberOfPersons: {
         type: Sequelize.STRING
+    },
+    updatedAt: {
+        type: Sequelize.DATE
     }
 })
 
