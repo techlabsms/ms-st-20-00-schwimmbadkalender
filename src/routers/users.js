@@ -7,7 +7,7 @@ const Sequelize = require('sequelize')
 //const {Op, Sequelize} = Sequelize.Op;
 const { Op } = require ("sequelize")
 const moment = require('moment')
-var numberOfPersonsTotal = 0;
+
 
 // Get user list
 router.get('/', (req, res) => 
@@ -30,6 +30,7 @@ router.get('/shownumberofpersons',  (req, res) =>
         }
      })
     .then(user => {
+        var numberOfPersonsTotal = 0;
         for(i = 0; i <user.length; i++){
             numberOfPersonsTotal += parseInt(user[i].numberOfPersons) + 1;
         }
