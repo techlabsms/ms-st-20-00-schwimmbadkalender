@@ -10,7 +10,7 @@ const moment = require('moment')
 
 
 // Get user list
-router.get('/', (req, res) => 
+router.get('/showusers', (req, res) => 
 
 User.findAll()
     .then(user => {
@@ -22,22 +22,21 @@ User.findAll()
     .catch(err => console.log(err)))
 
 // Get users which are in the swimming pool
-router.get('/shownumberofpersons',  (req, res) => 
+router.get('/',  (req, res) => 
    User.findAll({
        where: {
            updatedAt: {
-            [Op.gte]: moment().subtract(10, 'minutes').toDate() }
+            [Op.gte]: moment().subtract(42, 'weeks').toDate() }
         }
      })
     .then(user => {
         var numberOfPersonsTotal = 0;
         for(i = 0; i <user.length; i++){
-            numberOfPersonsTotal += parseInt(user[i].numberOfPersons) + 1;
+            //console.log(i);
+            console.log(user[i].numberOfPersons);
+            numberOfPersonsTotal += user[i].numberOfPersons + 1;
         }
-        
-        console.log(numberOfPersonsTotal);
-        
-        res.send(JSON.stringify(numberOfPersonsTotal))
+        res.send(JSON.stringify(numberOfPersonsTotal));
         
 })
 .catch(err => console.log(err)))

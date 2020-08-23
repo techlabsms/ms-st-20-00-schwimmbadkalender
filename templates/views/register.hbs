@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
+
+         <link href="css/floating-labels.css" rel="stylesheet">
+         <link href="css/styles.css" rel="stylesheet"> 
+    </head>
+
+  <body>
+      <div class="container">
+          <div class="row h-100 middle-section">
+              
+            {{#each errors}}
+                <div class="error">
+                    <p>{{text}}</p>
+                </div>
+                {{/each}}
+                <div class="mx-auto" style="width: 300px;">
+                    <form class="form-signin" action="/users/add" method="POST">
+                        <div class="form-label-group">
+                            <input type="text" id="fname" name="fname" class="form-control" placeholder="Vorname" required autofocus value={{fname}}>
+                            <label for="fname">Vorname</label>                     
+                        </div>
+                        <div class="form-label-group">
+                            <input type="text" id="lname" name="lname" class="form-control" placeholder="Nachname" required autofocus value={{lname}}>
+                            <label for="lname">Nachname</label>        
+                        </div>
+                        <div class="form-label-group">
+                            <input type="text" id="street" name="street" class="form-control" placeholder="Straße" required autofocus value={{street}}>
+                            <label for="street">Straße</label>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="text" id="streetNumber" name="streetNumber" class="form-control" placeholder="Nr." required autofocus value={{streetNumber}}>
+                            <label for="streetNumber">Nr.</label>                    
+                        </div>
+                        <div class="form-label-group">
+                            <input type="text" id="plz" name="plz" class="form-control" placeholder="PLZ" required autofocus value={{plz}}>
+                            <label for="plz">PLZ</label>                 
+                        </div>
+                        <div class="form-label-group">
+                            <input type="text" id="city" name="city" class="form-control" placeholder="Stadt" required autofocus value={{city}}>
+                            <label for="city">Stadt</label>                    
+                        </div>
+                        <div class="form-label-group">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus value={{email}}>
+                            <label for="email">Email</label>                        
+                        </div>
+                        <div class="form-label-group">
+                            <input type="text" id="numberOfPersons" name="numberOfPersons" class="form-control" placeholder="zusätzliche Personen"   autofocus value={{numberOfPersons}}>
+                            <label for="numberOfPersons">zusätzliche Personen</label>
+                        </div>
+                        <input type="submit" value="Reservierung" style="width: 200px;">   
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

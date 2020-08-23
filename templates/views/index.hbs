@@ -2,51 +2,20 @@
 <html>
     <head>
         <title>Index</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
+
+         <link href="css/styles.css" rel="stylesheet"> 
     </head>
 
   <body>
-      {{#each errors}}
-        <div class="error">
-            <p>{{text}}</p>
-        </div>
-        {{/each}}
-        <div class="container">
-            <form action="/users/add" method="POST">
-                <div class="input-group">
-                    <label for="fname">Vorname:</label><br>
-                    <input type="text" id="fname" name="fname" value={{fname}}><br>
+      <div class="container">
+          <div class="row h-100 middle-section">
+                <div class="mx-auto" style="width: 300px;">
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <a class="btn btn-dark" href="/register" role="button">Link</a>
+               
                 </div>
-                <div class="input-group">
-                    <label for="lname">Nachname:</label><br>
-                    <input type="text" id="lname" name="lname" value={{lname}}><br>
-                </div>
-                <div class="input-group">
-                    <label for="street">Straße:</label><br>
-                    <input type="text" id="street" name="street" value={{street}}><br>
-                </div>
-                <div class="input-group">
-                    <label for="streetNumber">Nr.:</label><br>
-                    <input type="text" id="streetNumber" name="streetNumber" value={{streetNumber}}><br>
-                </div>
-                <div class="input-group">
-                    <label for="plz">Postleitzahl:</label><br>
-                    <input type="text" id="plz" name="plz" value={{plz}}><br>
-                </div>
-                <div class="input-group">
-                    <label for="city">Stadt:</label><br>
-                    <input type="text" id="city" name="city" value={{city}}><br>
-                </div>
-                <div class="input-group">
-                    <label for="email">Email Adresse:</label><br>
-                    <input type="text" id="email" name="email" value={{email}}><br>
-                </div>
-                <div class="input-group">
-                    <label for="numberOfPersons">Anzahl Personen:</label><br>
-                    <input type="text" id="numberOfPersons" name="numberOfPersons" value={{numberOfPersons}}><br>
-                </div>
-                <input type="submit" value="Reservierung">   
-            </form>
+            </div>
         </div>
     </body>
 </html>

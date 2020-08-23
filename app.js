@@ -22,6 +22,8 @@ app.use(morgan('combined'))
 
 // Define paths for Express config 
 const viewsPath = path.join(__dirname, '/templates/views')
+const publicDirectoryPath = path.join(__dirname, '/public')
+
 
 // Setup handlebars engine and views location
 app.set('view engine', 'hbs')
@@ -35,11 +37,15 @@ app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
 
 // Set static folder
-app.use(express.static(path.join(__dirname, './src/public')))
+app.use(express.static(publicDirectoryPath))
 
 
 app.get('', (req, res) => {
     res.render('index')
+})
+
+app.get('/register', (req, res) => {
+    res.render('register')
 })
 
 
