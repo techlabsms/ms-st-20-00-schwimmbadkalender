@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><%= number %></title>
+        <title>Auslastung</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
 
         <link href="css/styles.css" rel="stylesheet"> 
@@ -10,7 +10,7 @@
     
         
 
-      
+      <script src="script/scale.js"></script>
            
 
     </head>
@@ -42,6 +42,8 @@
                 Go get chrome...
             </canvas>
         </div>
+      
+
         
         <% var number_from_backend = number; %>
    
@@ -80,11 +82,10 @@
                 grd.addColorStop(0.4, "red");
                 grd.addColorStop(0.95, "yellow");
                 grd.addColorStop(1, "green");
-                c.fillStyle = grd;
-                c.fillRect(200, 100, 100,300);
+               
                 
                 setInterval(function() {
-                    if(posY > (1 +0.2 - auslastung)*canvas.height) {
+                    if(posY > (1 +0.25 - auslastung)*0.8*canvas.height) {
                         c.fillStyle = grd;
                         c.fillRect(0.4*canvas.width, 0.2*canvas.height, 0.2*canvas.width,0.6*canvas.height);
 
@@ -118,8 +119,6 @@
             };
         </script>
 
-
-      
       
     </body>
 </html>
