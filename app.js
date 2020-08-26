@@ -2,7 +2,7 @@
 const  path = require('path')
 const express = require('express')
 const morgan = require('morgan')
-const hbs = require('hbs')
+const ejs = require('ejs')
 const bodyParser = require('body-parser')
 
 const userRouter = require('./src/routers/users')
@@ -26,7 +26,7 @@ const publicDirectoryPath = path.join(__dirname, '/public')
 
 
 // Setup handlebars engine and views location
-app.set('view engine', 'hbs')
+app.set('view engine', 'ejs')
 app.set('views', viewsPath)
 
 // Body Parser Middleware
@@ -45,7 +45,7 @@ app.get('', (req, res) => {
 })
 
 app.get('/register', (req, res) => {
-    res.render('register')
+     res.render('register')
 })
 
 

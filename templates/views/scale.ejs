@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= number %></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
+
+        <link href="css/styles.css" rel="stylesheet"> 
+
+        
+    
+        
+
+      
+           
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+            <a class="navbar-brand" href="/">Freibad XY</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/register">Buchung <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">Momentane Auslastung</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Weitere Informationen</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+        
+            <canvas id="skala" width="500" height="500">
+                Go get chrome...
+            </canvas>
+        </div>
+        
+        <% var number_from_backend = number; %>
+   
+        <script>
+
+            var a = <%= number_from_backend %>;
+            window.onload = function () {
+    
+                var canvas = document.getElementById("skala"),
+                personen_max = 100,
+                auslastung = a / personen_max,
+                number = 50,
+                c = canvas.getContext("2d");
+
+                //window
+                //c.fillStyle = "grey";
+                //c.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Linienfarbe
+                c.strokeStyle = "black";
+                c.lineWidth = 5;
+            
+                //Prozentangabe
+                c.fillStyle = "grey";
+                c.font = "40px Hevetica";
+                c.fillText(auslastung*100 + "%", 0.65* canvas.width, 0.525*canvas.height);
+                c.fillText({number},10,10);
+
+                // set starting point of drawning
+                var posX = 0.4*canvas.width,
+                    posY = 0.8*canvas.height;
+                
+                // Set Gradient
+                var grd_speed = 1;
+                var grd = c.createLinearGradient(0,0,0,300);
+                grd.addColorStop(0.4, "red");
+                grd.addColorStop(0.95, "yellow");
+                grd.addColorStop(1, "green");
+                c.fillStyle = grd;
+                c.fillRect(200, 100, 100,300);
+                
+                setInterval(function() {
+                    if(posY > (1 +0.2 - auslastung)*canvas.height) {
+                        c.fillStyle = grd;
+                        c.fillRect(0.4*canvas.width, 0.2*canvas.height, 0.2*canvas.width,0.6*canvas.height);
+
+                        c.fillStyle = "white";
+                        c.fillRect(200, 100, 100,posY-100);
+                        posY -= grd_speed;
+
+                        //// Skala"gefäß"
+                        // Rand
+                        c.beginPath();
+                        c.moveTo(0.4*canvas.width, 0.2*canvas.height);
+                        c.lineTo(0.4*canvas.width, 0.8*canvas.height);
+                        c.lineTo(0.6*canvas.width, 0.8*canvas.height);
+                        c.lineTo(0.6*canvas.width, 0.2*canvas.height);
+                        c.closePath();
+                        
+                        //Skala
+                        c.moveTo(0.4*canvas.width, 0.4*canvas.height);
+                        c.lineTo(0.425*canvas.width, 0.4*canvas.height);
+                        c.moveTo(0.575*canvas.width, 0.4*canvas.height);
+                        c.lineTo(0.6*canvas.width, 0.4*canvas.height);
+
+                        c.moveTo(0.4*canvas.width, 0.6*canvas.height);
+                        c.lineTo(0.425*canvas.width, 0.6*canvas.height);
+                        c.moveTo(0.575*canvas.width, 0.6*canvas.height);
+                        c.lineTo(0.6*canvas.width, 0.6*canvas.height);
+
+                        c.stroke();
+                    }     
+                }, 1);
+            };
+        </script>
+
+
+      
+      
+    </body>
+</html>

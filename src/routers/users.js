@@ -26,7 +26,7 @@ router.get('/',  (req, res) =>
    User.findAll({
        where: {
            updatedAt: {
-            [Op.gte]: moment().subtract(42, 'weeks').toDate() }
+            [Op.gte]: moment().subtract(10, 'minutes').toDate() }
         }
      })
     .then(user => {
@@ -36,8 +36,10 @@ router.get('/',  (req, res) =>
             console.log(user[i].numberOfPersons);
             numberOfPersonsTotal += user[i].numberOfPersons + 1;
         }
-        res.send(JSON.stringify(numberOfPersonsTotal));
-        
+        res.render('scale', { 
+            number: numberOfPersonsTotal
+        })
+        //res.send(JSON.stringify(numberOfPersonsTotal));    
 })
 .catch(err => console.log(err)))
 
