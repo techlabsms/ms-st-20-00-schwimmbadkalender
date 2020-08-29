@@ -50,12 +50,12 @@
         <script>
 
             var a = <%= number_from_backend %>;
+            var personen_max = 200;
             window.onload = function () {
     
                 var canvas = document.getElementById("skala"),
-                personen_max = 100,
+                
                 auslastung = a / personen_max,
-                number = 50,
                 c = canvas.getContext("2d");
 
                 //window
@@ -70,7 +70,6 @@
                 c.fillStyle = "grey";
                 c.font = "40px Hevetica";
                 c.fillText(auslastung*100 + "%", 0.65* canvas.width, 0.525*canvas.height);
-                c.fillText({number},10,10);
 
                  //// Skala"gefäß"
                         // Rand
@@ -117,7 +116,7 @@
                             c.fillRect(0.4*canvas.width, 0.2*canvas.height, 0.2*canvas.width,0.6*canvas.height);
 
                             c.fillStyle = "white";
-                            c.fillRect(200, 100, 100,posY-100);
+                            c.fillRect(200, 100, 100,posY - 0.2*canvas.height);
                             posY -= grd_speed;
 
                             //// Skala"gefäß"
