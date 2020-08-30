@@ -9,7 +9,7 @@
     </head>
 
   <body>
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
             <a class="navbar-brand" href="/">Freibad XY</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,52 +28,53 @@
                 </ul>
             </div>
         </nav>
-
-      <div class="container">
-          <div class="row h-100 middle-section">
-              
-           
-                <div class="mx-auto" style="width: 300px;">
-                    <form class="form-signin" action="/users/add" method="POST">
-                        
-                        <div class="form-label-group">
-                            <input type="text" id="fname" name="fname" class="form-control" placeholder="Vorname" required autofocus>
-                            <label for="fname">Vorname</label>  
-                                             
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <h1>Buchung</h1>
+                <p class="lead">Hier können Sie für sich und Ihre Familie Ihren Freibadbesuch buchen.</p>
+                <form class="form-signin" action="/users/add" method="POST">                  
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="" required autofocus>
+                            
+                        </div> 
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="fname">  Vorname</label>
+                            <input type="text" id="fname" name="fname" class="form-control" placeholder="" required autofocus>
                         </div>
-                        <div class="form-label-group">
-                            <input type="text" id="lname" name="lname" class="form-control" placeholder="Nachname" required autofocus>
-                            <label for="lname">Nachname</label>        
+                        <div class="form-group col-md-3">
+                            <label for="lname">Nachname</label>
+                            <input type="text" id="lname" name="lname" class="form-control" placeholder="" required autofocus>
                         </div>
-                        <div class="form-label-group">
-                            <input type="text" id="street" name="street" class="form-control" placeholder="Straße" required autofocus>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
                             <label for="street">Straße</label>
+                            <input type="text" id="street" name="street" class="form-control" placeholder="" required autofocus>
                         </div>
-                        <div class="form-label-group">
-                            <input type="text" id="streetNumber" name="streetNumber" class="form-control" placeholder="Nr." required autofocus>
-                            <label for="streetNumber">Nr.</label>                    
+                        <div class="form-group col-md-3">
+                            <label for="streetNumber">Nr.</label>
+                            <input type="text" id="streetNumber" name="streetNumber" class="form-control" placeholder="" required autofocus>
                         </div>
-                        <div class="form-label-group">
-                            <input type="text" id="plz" name="plz" class="form-control" placeholder="PLZ" required autofocus>
-                            <label for="plz">PLZ</label>                 
+                        <div class="form-group col-md-2">
+                            <label for="plz">Postleitzahl</label>
+                            <input type="text" id="plz" name="plz" class="form-control" placeholder="" required autofocus>
                         </div>
-                        <div class="form-label-group">
-                            <input type="text" id="city" name="city" class="form-control" placeholder="Stadt" required autofocus>
-                            <label for="city">Stadt</label>                    
+                        <div class="form-group col-md-2">
+                            <label for="city">Stadt</label>
+                            <input type="text" id="city" name="city" class="form-control" placeholder="" required autofocus>
                         </div>
-                        <div class="form-label-group">
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus>
-                            <label for="email">Email</label>                        
+                        <div class="form-group col-md-2">
+                            <label for="numberOfPersons">Anzahl Besucher</label>
+                            <input type="text" id="numberOfPersons" name="numberOfPersons" class="form-control" placeholder=""   autofocus>
                         </div>
-                        <div class="form-label-group">
-                            <input type="text" id="numberOfPersons" name="numberOfPersons" class="form-control" placeholder="zusätzliche Personen"   autofocus>
-                            <label for="numberOfPersons">zusätzliche Personen</label>
-                        </div>
-                        <input type="submit" value="Reservierung" style="width: 200px;">
-                   
-                    </form>
-                </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Buchen</button>
+                </form>
             </div>
-        </div>
+        </main>
     </body>
 </html>
