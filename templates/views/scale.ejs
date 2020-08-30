@@ -2,20 +2,15 @@
 <html>
     <head>
         <title>Auslastung</title>
+        <!-- bootstrap --> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
-
+        <!-- local stylesheet-->
         <link href="css/styles.css" rel="stylesheet"> 
 
-        
-    
-        
-
-      <script src="script/scale.js"></script>
-           
-
+        <script src="script/scale.js"></script>
     </head>
-
     <body>
+        <!-- navbar -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
             <a class="navbar-brand" href="/">Freibad XY</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +30,7 @@
                 </ul>
             </div>
         </nav>
-        
+
         <div class="jumbotron">
         
             <canvas id="skala" width="500" height="500">
@@ -56,6 +51,7 @@
                 var canvas = document.getElementById("skala"),
                 
                 auslastung = a / personen_max,
+                font_size = canvas.width/10,
                 c = canvas.getContext("2d");
 
                 //window
@@ -64,11 +60,11 @@
 
                 // Linienfarbe
                 c.strokeStyle = "black";
-                c.lineWidth = 5;
+                c.lineWidth = canvas.width / 100;
             
                 //Prozentangabe
                 c.fillStyle = "grey";
-                c.font = "40px Hevetica";
+                c.font = font_size +"px Hevetica";
                 c.fillText(auslastung*100 + "%", 0.65* canvas.width, 0.525*canvas.height);
 
                  //// Skala"gefäß"
@@ -116,7 +112,7 @@
                             c.fillRect(0.4*canvas.width, 0.2*canvas.height, 0.2*canvas.width,0.6*canvas.height);
 
                             c.fillStyle = "white";
-                            c.fillRect(200, 100, 100,posY - 0.2*canvas.height);
+                            c.fillRect(0.4*canvas.width, 0.2*canvas.height, 0.2*canvas.width, posY - 0.2*canvas.height);
                             posY -= grd_speed;
 
                             //// Skala"gefäß"
