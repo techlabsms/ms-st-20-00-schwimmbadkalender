@@ -36,7 +36,7 @@
                 var canvas = document.getElementById("skala"),
                 
                 auslastung = a / personen_max,
-                font_size = canvas.width/10,
+                font_size = canvas.height/10,
                 c = canvas.getContext("2d");
 
                 //window
@@ -80,7 +80,7 @@
                 
                 // Set Gradient
                 var grd_speed = 1;
-                var grd = c.createLinearGradient(0,0,0,300);
+                var grd = c.createLinearGradient(0,0,0, 0.6*canvas.height);
                 grd.addColorStop(0.4, "red");
                 grd.addColorStop(0.95, "yellow");
                 grd.addColorStop(1, "green");
