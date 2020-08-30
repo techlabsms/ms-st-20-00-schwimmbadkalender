@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Freibad XY</title>
+        <!-- bootstrap -->  
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
+        <!-- local stylesheet-->
+        <link href="css/styles.css" rel="stylesheet"> 
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+            <a class="navbar-brand" href="/">Freibad XY</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/register">Buchung <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">Momentane Auslastung</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/info">Weitere Informationen</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <h1>Weitere Informationen</h1>
+                <p class="lead">
+                    <h4>Motivation</h4>
+                    <p>Diese Web Applikation ist im Zuge des Techlabs Digital Shaper Programs durch Caro (Frontend) und Thomas (Frontend & Backend) entstanden.</p>
+                    <h4>Technische Details</h4>
+                    <p>Die Buchungsdaten werden in einer MySQL-Datenbank erfasst und die Auslastung des Schwimmbads ermittelt. Das Schwimmbad hat eine fiktive Kapazität von 200 Besuchern.
+                        Zu vereinfachten Testzwecken werden bei der Auslastung die gebuchten Besucher der letzten 10 Minuten angezeigt.</p>
+                    
+                    <h4>Weitere Ideen</h4>
+
+                    <dl class="row">
+                        <dt class="col-sm-3">
+                            Buchungszeitraum
+                        </dt>
+                        <dd class="col-sm-9">
+                            Zur Zeit kann nur zum aktuellen Zeitpunkt gebucht werden. Die Möglichkeit einer Buchung zum Zeitpunkt X steht noch aus.
+                        </dd>
+                        <dt class="col-sm-3">
+                            Buchungsformular
+                        </dt>
+                        <dd class="col-sm-9">
+                            Serverseitige Abfrage, ob noch Kapazitäten ausstehen, Begrenzung der zus. Besucher pro Buchung, sowie ein Plausibilitätscheck der zus. Besucher stehen noch aus. 
+                            So können z.B. 22,5 zusätzliche Besucher gebucht werden und eine Kapazität > 100% erreicht werden.                
+                        </dd>  
+                        <dt class="col-sm-3">
+                            Tests
+                        </dt>
+                        <dd class="col-sm-9">
+                            Die App ist bisher ungetestet.
+                        </dd>
+                        <dt class="col-sm-3">
+                            Refactoring
+                        </dt>
+                        <dd class="col-sm-9">
+                                Header für Views <br>
+                                Auslagern des Auslastungs-Skripts <br>
+                                generelles Refactoring
+                        </dd>
+                    </dl>
+                <p class="lead">
+            </div>
+        </main>
+    </body>
+</html>

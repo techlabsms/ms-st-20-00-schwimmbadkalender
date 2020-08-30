@@ -48,9 +48,13 @@ app.get('/register', (req, res) => {
      res.render('register')
 })
 
+app.get('/info', (req, res) => {
+    res.render('info')
+})
 
 // User routes
 app.use('/users', require('./src/routers/users'))
+
 
 const port = process.env.PORT || 3000 
 
