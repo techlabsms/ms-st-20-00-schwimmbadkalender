@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Auslastung</title>
+        <title>Freibad XY</title>
         <!-- bootstrap --> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
         <!-- local stylesheet-->
@@ -30,14 +30,15 @@
                 </ul>
             </div>
         </nav>
-
-        <div class="jumbotron">
-        
-            <canvas id="skala" width="500" height="500">
-                Go get chrome...
-            </canvas>
-        </div>
-      
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <h1>Momentane Auslastung</h1>
+                
+                <canvas id="skala" width="500" height="500">
+                    Go get chrome...
+                </canvas>
+            </div>
+        </main>
 
         
         <% var number_from_backend = number; %>
