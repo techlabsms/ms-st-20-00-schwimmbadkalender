@@ -1,4 +1,9 @@
 
+body {
+    background-image: url(/img/freibad-bg.jpg);
+    background-size: 100%;
+}
+
 .middle-section {
     background: #A8A8A8;
     border-radius: 5px;
