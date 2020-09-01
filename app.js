@@ -40,14 +40,17 @@ app.use(bodyParser.json())
 app.use(express.static(publicDirectoryPath))
 
 
+// index route
 app.get('', (req, res) => {
     res.render('index')
 })
 
+// Buchung route
 app.get('/register', (req, res) => {
      res.render('register')
 })
 
+// info route
 app.get('/info', (req, res) => {
     res.render('info')
 })

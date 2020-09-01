@@ -15,7 +15,7 @@
                     <h4>Motivation</h4>
                     <p>Diese Web Applikation ist im Zuge des Techlabs Digital Shaper Programs durch Caro (Frontend) und <a href="https://github.com/ThomasDroege">Thomas</a> (Frontend & Backend) entstanden.</p>
                     <h4>Technische Details</h4>
-                    <p>Die Buchungsdaten werden in einer MySQL-Datenbank erfasst und die Auslastung des Schwimmbads ermittelt. Das Schwimmbad hat eine fiktive Kapazität von 200 Besuchern.
+                    <p>Die Buchungsdaten werden in einer MySQL-Datenbank erfasst und die Auslastung des Schwimmbads ermittelt. Das Schwimmbad hat eine fiktive Kapazität von 100 Besuchern.
                         Zu vereinfachten Testzwecken werden bei der Auslastung die gebuchten Besucher der letzten 10 Minuten angezeigt.</p>
                     
                     <h4>Weitere Ideen</h4>
@@ -31,8 +31,7 @@
                             Buchungsformular
                         </dt>
                         <dd class="col-sm-9">
-                            Serverseitige Abfrage, ob noch Kapazitäten ausstehen, Begrenzung der zus. Besucher pro Buchung, sowie ein Plausibilitätscheck der zus. Besucher stehen noch aus. 
-                            So können z.B. 22,5 zusätzliche Besucher gebucht werden und eine Kapazität > 100% erreicht werden.                
+                            Serverseitige Abfrage, ob noch Kapazitäten ausstehen.                
                         </dd>  
                         <dt class="col-sm-3">
                             Tests
@@ -44,7 +43,6 @@
                             Refactoring
                         </dt>
                         <dd class="col-sm-9">
-                                Header für Views <br>
                                 Auslagern des Auslastungs-Skripts <br>
                                 generelles Refactoring
                         </dd>
